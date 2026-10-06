@@ -46,6 +46,37 @@
 #sound-toggle.is-playing {
   border-color: rgba(244,234,213,.9);
 }
+
+
+/* MOBILE-SAFE ACTION ARROWS */
+/* SVG prevents iPhone/Safari from rendering Unicode arrows as emojis */
+
+.hero-action .arrow {
+  position: absolute;
+  right: 28px;
+  bottom: 28px;
+  width: 30px;
+  height: 30px;
+  display: block;
+  color: #cbdc8a;
+  font-size: 0;
+  line-height: 0;
+}
+
+.hero-action .arrow svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: visible;
+}
+
+.hero-action .arrow path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+}
 </style>
 </head>
 
@@ -54,30 +85,52 @@
 <main>
 
 <section class="hero">
+
   <div class="top">
     <span>FOREST DUFF</span>
     <span>MON 12 OCT</span>
   </div>
 
   <div class="hero-layout">
+
     <div class="hero-title">
+
       <p class="micro">MUSIC · NATURE · GOOD PEOPLE</p>
 
-      <h1>FOREST<br><i>DUFF</i></h1>
+      <h1>
+        FOREST<br>
+        <i>DUFF</i>
+      </h1>
 
       <p class="date">
         MONDAY 12 OCTOBER<br>
         <strong>6:30 PM → LATE</strong>
       </p>
+
     </div>
+
   </div>
 
+
   <div class="hero-actions">
+
     <a class="hero-action coming" href="#coming">
+
       <span class="action-small">01 / JOIN US</span>
-      <strong>I'M<br>COMING</strong>
-      <span class="arrow">↘</span>
+
+      <strong>
+        I'M<br>
+        COMING
+      </strong>
+
+      <span class="arrow" aria-hidden="true">
+        <svg viewBox="0 0 28 28">
+          <path d="M4 4 L24 24 M13 24 H24 V13"/>
+        </svg>
+      </span>
+
     </a>
+
 
     <a
       class="hero-action help"
@@ -85,16 +138,30 @@
       target="_blank"
       rel="noopener"
     >
+
       <span class="action-small">02 / GET INVOLVED</span>
-      <strong>I WANT<br>TO HELP</strong>
-      <span class="arrow">↗</span>
+
+      <strong>
+        I WANT<br>
+        TO HELP
+      </strong>
+
+      <span class="arrow" aria-hidden="true">
+        <svg viewBox="0 0 28 28">
+          <path d="M4 24 L24 4 M13 4 H24 V15"/>
+        </svg>
+      </span>
+
     </a>
+
   </div>
+
 
   <div class="bottom">
     <span>BYO DRINKS</span>
     <span>MADE TOGETHER</span>
   </div>
+
 </section>
 
 
@@ -112,6 +179,7 @@
     Music, nature, warm lights and good people.
     A farewell night in the forest — one last dance on the island.
   </p>
+
 
   <div class="event-card">
 
@@ -135,6 +203,7 @@
 
   </div>
 
+
   <p class="participate">
     Lights, decoration, firelight, projections, art, rugs,
     strange objects or ideas are welcome.
@@ -148,6 +217,7 @@
   <div class="coming-inner">
 
     <div>
+
       <p class="label">I'M COMING</p>
 
       <h2>
@@ -155,8 +225,12 @@
         <i>THERE.</i>
       </h2>
 
-      <p class="intro">Add your name.</p>
+      <p class="intro">
+        Add your name.
+      </p>
+
     </div>
+
 
     <div id="signup-area">
 
@@ -164,6 +238,7 @@
 
         <label>
           Your name
+
           <input
             id="coming-name"
             required
@@ -196,8 +271,15 @@
     </div>
 
     <div class="count-wrap">
-      <div class="big-count" id="big-count">0</div>
-      <p class="count-label">PEOPLE ARE COMING</p>
+
+      <div class="big-count" id="big-count">
+        0
+      </div>
+
+      <p class="count-label">
+        PEOPLE ARE COMING
+      </p>
+
     </div>
 
   </div>
@@ -288,7 +370,10 @@
 </button>
 
 
+<!-- SUPABASE -->
+
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 
 <script>
 
@@ -305,31 +390,54 @@ const supabaseClient =
   );
 
 
-/* =========================
+/* =========================================
    MUSIC
-========================= */
+========================================= */
 
-const audio = document.getElementById("forest-audio");
-const soundToggle = document.getElementById("sound-toggle");
+const audio =
+  document.getElementById("forest-audio");
+
+const soundToggle =
+  document.getElementById("sound-toggle");
 
 let musicStarted = false;
+
 
 if (audio) {
 
   audio.volume = 0.72;
+
 
   function updateSoundButton() {
 
     if (!soundToggle) return;
 
     if (audio.paused) {
+
       soundToggle.textContent = "♪";
-      soundToggle.setAttribute("aria-label", "Play music");
-      soundToggle.classList.remove("is-playing");
+
+      soundToggle.setAttribute(
+        "aria-label",
+        "Play music"
+      );
+
+      soundToggle.classList.remove(
+        "is-playing"
+      );
+
     } else {
+
       soundToggle.textContent = "Ⅱ";
-      soundToggle.setAttribute("aria-label", "Pause music");
-      soundToggle.classList.add("is-playing");
+
+      soundToggle.setAttribute(
+        "aria-label",
+        "Pause music"
+      );
+
+      soundToggle.classList.add(
+        "is-playing"
+      );
+
     }
 
   }
@@ -342,37 +450,22 @@ if (audio) {
       await audio.play();
 
       musicStarted = true;
+
       updateSoundButton();
 
     } catch (error) {
 
-      /*
-        Browsers may block audible autoplay.
-        If that happens, the first user interaction
-        will try again.
-      */
-
-      console.log("Autoplay waiting for user interaction.");
+      console.log(
+        "Autoplay waiting for user interaction."
+      );
 
     }
 
   }
 
 
-  /*
-    First attempt:
-    play immediately when the page loads.
-  */
-
   startMusic();
 
-
-  /*
-    Fallback:
-    if the browser blocks autoplay,
-    the first click/tap anywhere on the page
-    starts the music.
-  */
 
   function firstInteraction() {
 
@@ -381,6 +474,7 @@ if (audio) {
     }
 
   }
+
 
   document.addEventListener(
     "pointerdown",
@@ -392,33 +486,39 @@ if (audio) {
   );
 
 
-  /*
-    Manual music control.
-  */
-
   if (soundToggle) {
 
-    soundToggle.addEventListener("click", async (event) => {
+    soundToggle.addEventListener(
+      "click",
+      async (event) => {
 
-      event.stopPropagation();
+        event.stopPropagation();
 
-      if (audio.paused) {
+        if (audio.paused) {
 
-        try {
-          await audio.play();
-        } catch (error) {
-          console.log("Could not start music:", error);
+          try {
+
+            await audio.play();
+
+          } catch (error) {
+
+            console.log(
+              "Could not start music:",
+              error
+            );
+
+          }
+
+        } else {
+
+          audio.pause();
+
         }
 
-      } else {
-
-        audio.pause();
+        updateSoundButton();
 
       }
-
-      updateSoundButton();
-
-    });
+    );
 
   }
 
@@ -436,20 +536,20 @@ if (audio) {
 }
 
 
-/* =========================
+/* =========================================
    SUPABASE
-========================= */
+========================================= */
 
 function escapeHtml(v) {
 
   return String(v).replace(
     /[&<>"']/g,
     c => ({
-      "&":"&amp;",
-      "<":"&lt;",
-      ">":"&gt;",
-      "\"":"&quot;",
-      "'":"&#039;"
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      "\"": "&quot;",
+      "'": "&#039;"
     }[c])
   );
 
@@ -458,14 +558,19 @@ function escapeHtml(v) {
 
 async function getAttendees() {
 
-  const { data, error } =
-    await supabaseClient
-      .from("attendees")
-      .select("id,name,created_at")
-      .order(
-        "created_at",
-        { ascending: true }
-      );
+  const {
+    data,
+    error
+  } = await supabaseClient
+    .from("attendees")
+    .select("id,name,created_at")
+    .order(
+      "created_at",
+      {
+        ascending: true
+      }
+    );
+
 
   if (error) {
 
@@ -477,6 +582,7 @@ async function getAttendees() {
     return [];
 
   }
+
 
   return data || [];
 
@@ -492,21 +598,26 @@ function renderAttendees(attendees) {
 
   list.innerHTML = "";
 
-  attendees.forEach(({ name }) => {
 
-    const li =
-      document.createElement("li");
+  attendees.forEach(
+    ({ name }) => {
 
-    li.innerHTML =
-      `<strong>${escapeHtml(name)}</strong>`;
+      const li =
+        document.createElement("li");
 
-    list.appendChild(li);
+      li.innerHTML =
+        `<strong>${escapeHtml(name)}</strong>`;
 
-  });
+      list.appendChild(li);
+
+    }
+  );
+
 
   document.getElementById(
     "big-count"
-  ).textContent = attendees.length;
+  ).textContent =
+    attendees.length;
 
 }
 
@@ -520,9 +631,9 @@ async function refreshAttendees() {
 }
 
 
-/* =========================
+/* =========================================
    LOCAL CONFIRMATION
-========================= */
+========================================= */
 
 const JOINED_KEY =
   "forestDuffJoined";
@@ -543,6 +654,7 @@ function showJoinedState(name) {
     name
   );
 
+
   const area =
     document.getElementById(
       "signup-area"
@@ -550,11 +662,9 @@ function showJoinedState(name) {
 
   if (!area) return;
 
+
   area.innerHTML = `
-    <div
-      class="joined-state"
-      aria-live="polite"
-    >
+    <div class="joined-state" aria-live="polite">
 
       <p class="joined-kicker">
         CONFIRMED
@@ -587,6 +697,7 @@ function showDuplicateState() {
       "coming-name"
     );
 
+
   if (note) {
 
     note.classList.add(
@@ -605,6 +716,7 @@ function showDuplicateState() {
 
   }
 
+
   if (input) {
 
     input.focus();
@@ -622,6 +734,7 @@ function showErrorState(message) {
       "coming-note"
     );
 
+
   if (note) {
 
     note.classList.remove(
@@ -636,9 +749,9 @@ function showErrorState(message) {
 }
 
 
-/* =========================
-   JOIN FORM
-========================= */
+/* =========================================
+   FORM
+========================================= */
 
 document
   .getElementById("coming-form")
@@ -648,11 +761,6 @@ document
 
       e.preventDefault();
 
-
-      /*
-        If this browser already joined,
-        don't create another registration.
-      */
 
       if (
         localStorage.getItem(
@@ -675,6 +783,7 @@ document
         document.getElementById(
           "coming-name"
         );
+
 
       const name =
         input.value.trim();
@@ -701,11 +810,6 @@ document
       }
 
 
-      /*
-        Check Supabase first so the
-        same name cannot be registered twice.
-      */
-
       const {
         data: existing,
         error: checkError
@@ -713,7 +817,10 @@ document
         await supabaseClient
           .from("attendees")
           .select("id,name")
-          .ilike("name", name)
+          .ilike(
+            "name",
+            name
+          )
           .limit(1);
 
 
@@ -745,11 +852,9 @@ document
       }
 
 
-      /*
-        Insert attendee.
-      */
-
-      const { error } =
+      const {
+        error
+      } =
         await supabaseClient
           .from("attendees")
           .insert({
@@ -773,19 +878,10 @@ document
       }
 
 
-      /*
-        Only lock the browser AFTER
-        Supabase confirms the insert succeeded.
-      */
-
       showJoinedState(name);
 
       await refreshAttendees();
 
-
-      /*
-        Smoothly move to the attendee list.
-      */
 
       document
         .getElementById("attendees")
@@ -798,9 +894,9 @@ document
   );
 
 
-/* =========================
-   RESTORE JOINED STATE
-========================= */
+/* =========================================
+   RESTORE LOCAL CONFIRMATION
+========================================= */
 
 if (
   localStorage.getItem(
@@ -817,16 +913,16 @@ if (
 }
 
 
-/* =========================
+/* =========================================
    INITIAL ATTENDEES
-========================= */
+========================================= */
 
 refreshAttendees();
 
 
-/* =========================
-   REALTIME ATTENDEES
-========================= */
+/* =========================================
+   REALTIME ATTENDEE UPDATES
+========================================= */
 
 supabaseClient
   .channel("attendees-live")
