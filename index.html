@@ -56,8 +56,34 @@
 
 
 /* =========================================================
+   COMPLETELY DISABLE OLD HERO CARD DECORATIONS
+========================================================= */
+
+.hero-action::before,
+.hero-action::after {
+  content: none !important;
+  display: none !important;
+  visibility: hidden !important;
+
+  width: 0 !important;
+  height: 0 !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  background: none !important;
+
+  border: 0 !important;
+  outline: 0 !important;
+
+  box-shadow: none !important;
+
+  transform: none !important;
+}
+
+
+/* =========================================================
    CLEAN ACTION ARROWS
-   Completely independent from previous .arrow styles
 ========================================================= */
 
 .clean-action-arrow {
@@ -79,6 +105,9 @@
   background: transparent !important;
 
   border: 0 !important;
+  outline: 0 !important;
+
+  box-shadow: none !important;
 
   transform: none !important;
 
@@ -89,7 +118,7 @@
 }
 
 
-/* SVG path */
+/* SVG itself */
 
 .clean-action-arrow path {
   fill: none !important;
@@ -101,6 +130,15 @@
   stroke-linecap: square !important;
 
   stroke-linejoin: miter !important;
+}
+
+
+/* Make sure the SVG has no pseudo decorations */
+
+.clean-action-arrow::before,
+.clean-action-arrow::after {
+  content: none !important;
+  display: none !important;
 }
 
 
@@ -186,8 +224,6 @@
       </strong>
 
 
-      <!-- CLEAN SVG ARROW -->
-
       <svg
         class="clean-action-arrow"
         viewBox="0 0 28 28"
@@ -222,8 +258,6 @@
         TO HELP
       </strong>
 
-
-      <!-- CLEAN SVG ARROW -->
 
       <svg
         class="clean-action-arrow"
