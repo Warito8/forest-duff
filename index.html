@@ -56,63 +56,18 @@
 
 
 /* =========================================================
-   ACTION ARROWS
-   SVG VERSION — SAFE ON IPHONE / SAFARI
+   CLEAN ACTION ARROWS
+   Completely independent from previous .arrow styles
 ========================================================= */
 
-.hero-action .arrow {
+.clean-action-arrow {
   position: absolute !important;
+
   right: 28px !important;
   bottom: 28px !important;
 
   width: 30px !important;
   height: 30px !important;
-
-  display: block !important;
-
-  color: #cbdc8a !important;
-
-  font-size: 0 !important;
-  line-height: 0 !important;
-
-  background: transparent !important;
-
-  border: 0 !important;
-
-  transform: none !important;
-  rotate: none !important;
-
-  opacity: 1 !important;
-}
-
-
-/* Remove old CSS arrow pseudo-elements */
-
-.hero-action .arrow::before,
-.hero-action .arrow::after {
-  content: none !important;
-
-  display: none !important;
-
-  width: 0 !important;
-  height: 0 !important;
-
-  margin: 0 !important;
-  padding: 0 !important;
-
-  background: none !important;
-
-  border: 0 !important;
-
-  transform: none !important;
-}
-
-
-/* SVG */
-
-.hero-action .arrow svg {
-  width: 100% !important;
-  height: 100% !important;
 
   display: block !important;
 
@@ -123,23 +78,29 @@
 
   background: transparent !important;
 
+  border: 0 !important;
+
   transform: none !important;
+
+  font-size: 0 !important;
+  line-height: 0 !important;
+
+  color: #cbdc8a !important;
 }
 
 
-/* SVG line */
+/* SVG path */
 
-.hero-action .arrow path {
+.clean-action-arrow path {
   fill: none !important;
 
-  stroke: currentColor !important;
+  stroke: #cbdc8a !important;
 
   stroke-width: 1.5 !important;
 
   stroke-linecap: square !important;
-  stroke-linejoin: miter !important;
 
-  vector-effect: non-scaling-stroke;
+  stroke-linejoin: miter !important;
 }
 
 
@@ -147,9 +108,10 @@
 
 @media (max-width: 700px) {
 
-  .hero-action .arrow {
+  .clean-action-arrow {
     right: 24px !important;
     bottom: 24px !important;
+
     width: 30px !important;
     height: 30px !important;
   }
@@ -200,7 +162,9 @@
   </div>
 
 
-  <!-- ACTION BUTTONS -->
+  <!-- ===================================================
+       ACTION BUTTONS
+  ==================================================== -->
 
   <div class="hero-actions">
 
@@ -222,23 +186,20 @@
       </strong>
 
 
-      <span
-        class="arrow"
+      <!-- CLEAN SVG ARROW -->
+
+      <svg
+        class="clean-action-arrow"
+        viewBox="0 0 28 28"
+        xmlns="http://www.w3.org/2000/svg"
         aria-hidden="true"
       >
 
-        <svg
-          viewBox="0 0 28 28"
-          xmlns="http://www.w3.org/2000/svg"
-        >
+        <path
+          d="M4 4 L24 24 M16 24 H24 V16"
+        />
 
-          <path
-            d="M4 4 L24 24 M13 24 H24 V13"
-          />
-
-        </svg>
-
-      </span>
+      </svg>
 
     </a>
 
@@ -262,23 +223,20 @@
       </strong>
 
 
-      <span
-        class="arrow"
+      <!-- CLEAN SVG ARROW -->
+
+      <svg
+        class="clean-action-arrow"
+        viewBox="0 0 28 28"
+        xmlns="http://www.w3.org/2000/svg"
         aria-hidden="true"
       >
 
-        <svg
-          viewBox="0 0 28 28"
-          xmlns="http://www.w3.org/2000/svg"
-        >
+        <path
+          d="M4 24 L24 4 M16 4 H24 V12"
+        />
 
-          <path
-            d="M4 24 L24 4 M13 4 H24 V15"
-          />
-
-        </svg>
-
-      </span>
+      </svg>
 
     </a>
 
