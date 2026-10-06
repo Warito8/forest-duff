@@ -9,7 +9,11 @@
 <link rel="stylesheet" href="style.css">
 
 <style>
-/* MUSIC CONTROL */
+
+/* =========================================================
+   MUSIC CONTROL
+========================================================= */
+
 #sound-toggle {
   position: fixed;
   right: 22px;
@@ -30,7 +34,10 @@
   justify-content: center;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  transition: transform .2s ease, background .2s ease, border-color .2s ease;
+  transition:
+    transform .2s ease,
+    background .2s ease,
+    border-color .2s ease;
 }
 
 #sound-toggle:hover {
@@ -48,41 +55,123 @@
 }
 
 
-/* MOBILE-SAFE ACTION ARROWS */
-/* SVG prevents iPhone/Safari from rendering Unicode arrows as emojis */
+/* =========================================================
+   ACTION ARROWS
+   SVG VERSION — SAFE ON IPHONE / SAFARI
+========================================================= */
+
+/* Completely override any old .arrow styling */
 
 .hero-action .arrow {
-  position: absolute;
-  right: 28px;
-  bottom: 28px;
-  width: 30px;
-  height: 30px;
-  display: block;
-  color: #cbdc8a;
-  font-size: 0;
-  line-height: 0;
+  position: absolute !important;
+  right: 28px !important;
+  bottom: 28px !important;
+
+  width: 30px !important;
+  height: 30px !important;
+
+  display: block !important;
+
+  color: #cbdc8a !important;
+
+  font-size: 0 !important;
+  line-height: 0 !important;
+
+  background: transparent !important;
+
+  border: 0 !important;
+
+  transform: none !important;
+  rotate: none !important;
+
+  opacity: 1 !important;
 }
+
+
+/* Kill the old CSS arrow pseudo-elements */
+
+.hero-action .arrow::before,
+.hero-action .arrow::after {
+  content: none !important;
+
+  display: none !important;
+
+  width: 0 !important;
+  height: 0 !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  background: none !important;
+
+  border: 0 !important;
+
+  transform: none !important;
+}
+
+
+/* SVG itself */
 
 .hero-action .arrow svg {
-  width: 100%;
-  height: 100%;
-  display: block;
-  overflow: visible;
+  width: 100% !important;
+  height: 100% !important;
+
+  display: block !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  overflow: visible !important;
+
+  background: transparent !important;
+
+  transform: none !important;
 }
 
+
+/* SVG line */
+
 .hero-action .arrow path {
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.5;
-  stroke-linecap: square;
-  stroke-linejoin: miter;
+  fill: none !important;
+
+  stroke: currentColor !important;
+
+  stroke-width: 1.5 !important;
+
+  stroke-linecap: square !important;
+  stroke-linejoin: miter !important;
+
+  vector-effect: non-scaling-stroke;
 }
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .hero-action .arrow {
+    right: 24px !important;
+    bottom: 24px !important;
+    width: 30px !important;
+    height: 30px !important;
+  }
+
+}
+
 </style>
 </head>
+
 
 <body>
 
 <main>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
 
 <section class="hero">
 
@@ -91,11 +180,14 @@
     <span>MON 12 OCT</span>
   </div>
 
+
   <div class="hero-layout">
 
     <div class="hero-title">
 
-      <p class="micro">MUSIC · NATURE · GOOD PEOPLE</p>
+      <p class="micro">
+        MUSIC · NATURE · GOOD PEOPLE
+      </p>
 
       <h1>
         FOREST<br>
@@ -112,25 +204,52 @@
   </div>
 
 
+  <!-- ACTION BUTTONS -->
+
   <div class="hero-actions">
 
-    <a class="hero-action coming" href="#coming">
 
-      <span class="action-small">01 / JOIN US</span>
+    <!-- I'M COMING -->
+
+    <a
+      class="hero-action coming"
+      href="#coming"
+    >
+
+      <span class="action-small">
+        01 / JOIN US
+      </span>
 
       <strong>
         I'M<br>
         COMING
       </strong>
 
-      <span class="arrow" aria-hidden="true">
-        <svg viewBox="0 0 28 28">
-          <path d="M4 4 L24 24 M13 24 H24 V13"/>
+
+      <!-- SVG ARROW -->
+
+      <span
+        class="arrow"
+        aria-hidden="true"
+      >
+
+        <svg
+          viewBox="0 0 28 28"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+
+          <path
+            d="M4 4 L24 24 M13 24 H24 V13"
+          />
+
         </svg>
+
       </span>
 
     </a>
 
+
+    <!-- I WANT TO HELP -->
 
     <a
       class="hero-action help"
@@ -139,17 +258,34 @@
       rel="noopener"
     >
 
-      <span class="action-small">02 / GET INVOLVED</span>
+      <span class="action-small">
+        02 / GET INVOLVED
+      </span>
 
       <strong>
         I WANT<br>
         TO HELP
       </strong>
 
-      <span class="arrow" aria-hidden="true">
-        <svg viewBox="0 0 28 28">
-          <path d="M4 24 L24 4 M13 4 H24 V15"/>
+
+      <!-- SVG ARROW -->
+
+      <span
+        class="arrow"
+        aria-hidden="true"
+      >
+
+        <svg
+          viewBox="0 0 28 28"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+
+          <path
+            d="M4 24 L24 4 M13 4 H24 V15"
+          />
+
         </svg>
+
       </span>
 
     </a>
@@ -165,9 +301,16 @@
 </section>
 
 
+
+<!-- =====================================================
+     WHAT'S THE DUFF
+===================================================== -->
+
 <section class="duff">
 
-  <p class="label">WHAT'S THE DUFF?</p>
+  <p class="label">
+    WHAT'S THE DUFF?
+  </p>
 
   <h2>
     A LITTLE<br>
@@ -183,23 +326,51 @@
 
   <div class="event-card">
 
+
     <div>
+
       <small>WHEN</small>
-      <b>MONDAY 12 OCTOBER</b>
-      <span>6:30 PM → LATE</span>
+
+      <b>
+        MONDAY 12 OCTOBER
+      </b>
+
+      <span>
+        6:30 PM → LATE
+      </span>
+
     </div>
 
+
     <div>
+
       <small>DRINKS</small>
-      <b>BYO</b>
-      <span>Bring your own drinks.</span>
+
+      <b>
+        BYO
+      </b>
+
+      <span>
+        Bring your own drinks.
+      </span>
+
     </div>
 
+
     <div>
+
       <small>VIBE</small>
-      <b>MUSIC + NATURE</b>
-      <span>Come as you are.</span>
+
+      <b>
+        MUSIC + NATURE
+      </b>
+
+      <span>
+        Come as you are.
+      </span>
+
     </div>
+
 
   </div>
 
@@ -212,13 +383,24 @@
 </section>
 
 
-<section id="coming" class="coming-section">
+
+<!-- =====================================================
+     I'M COMING
+===================================================== -->
+
+<section
+  id="coming"
+  class="coming-section"
+>
 
   <div class="coming-inner">
 
+
     <div>
 
-      <p class="label">I'M COMING</p>
+      <p class="label">
+        I'M COMING
+      </p>
 
       <h2>
         SEE YOU<br>
@@ -234,9 +416,13 @@
 
     <div id="signup-area">
 
-      <form id="coming-form" class="name-form">
+      <form
+        id="coming-form"
+        class="name-form"
+      >
 
         <label>
+
           Your name
 
           <input
@@ -245,13 +431,22 @@
             autocomplete="name"
             placeholder="Your name"
           >
+
         </label>
 
-        <button class="submit" type="submit">
+
+        <button
+          class="submit"
+          type="submit"
+        >
           I'M IN →
         </button>
 
-        <p id="coming-note" class="note"></p>
+
+        <p
+          id="coming-note"
+          class="note"
+        ></p>
 
       </form>
 
@@ -262,17 +457,35 @@
 </section>
 
 
-<section id="attendees" class="count-section">
+
+<!-- =====================================================
+     ATTENDEES
+===================================================== -->
+
+<section
+  id="attendees"
+  class="count-section"
+>
 
   <div class="count-grid">
 
+
     <div class="names">
-      <ul id="attendee-list" class="attendee-list"></ul>
+
+      <ul
+        id="attendee-list"
+        class="attendee-list"
+      ></ul>
+
     </div>
+
 
     <div class="count-wrap">
 
-      <div class="big-count" id="big-count">
+      <div
+        class="big-count"
+        id="big-count"
+      >
         0
       </div>
 
@@ -282,10 +495,16 @@
 
     </div>
 
+
   </div>
 
 </section>
 
+
+
+<!-- =====================================================
+     SHARE
+===================================================== -->
 
 <section class="archive-share">
 
@@ -295,15 +514,18 @@
       THE FOREST IS COMING TOGETHER
     </p>
 
+
     <h2>
       SHARE THE<br>
       <i>MOMENTS.</i>
     </h2>
 
+
     <p class="intro">
       Share the making and the moments.<br>
       Photos &amp; videos from the preparation and the night.
     </p>
+
 
     <a
       class="share-button"
@@ -311,9 +533,13 @@
       target="_blank"
       rel="noopener"
     >
+
       <span>＋</span>
+
       SHARE A MOMENT
+
       <b>↗</b>
+
     </a>
 
   </div>
@@ -321,16 +547,23 @@
 </section>
 
 
+
+<!-- =====================================================
+     FINAL
+===================================================== -->
+
 <section class="final">
 
   <p class="micro">
     MONDAY 12 OCTOBER · 6:30 PM → LATE
   </p>
 
+
   <h2>
     SEE YOU<br>
     <i>IN THE WOODS.</i>
   </h2>
+
 
   <p class="final-signature">
     eDUFFarewell
@@ -338,16 +571,32 @@
 
 </section>
 
+
 </main>
 
 
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
 <footer>
-  <span>FOREST DUFF</span>
-  <span>Made together.</span>
+
+  <span>
+    FOREST DUFF
+  </span>
+
+  <span>
+    Made together.
+  </span>
+
 </footer>
 
 
-<!-- MUSIC -->
+
+<!-- =====================================================
+     AUDIO
+===================================================== -->
 
 <audio
   id="forest-audio"
@@ -356,7 +605,12 @@
   playsinline
   loop
 >
-  <source src="savannah.mp3" type="audio/mpeg">
+
+  <source
+    src="savannah.mp3"
+    type="audio/mpeg"
+  >
+
 </audio>
 
 
@@ -370,18 +624,28 @@
 </button>
 
 
-<!-- SUPABASE -->
+
+<!-- =====================================================
+     SUPABASE
+===================================================== -->
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 
 <script>
 
+
+/* =====================================================
+   SUPABASE CONFIG
+===================================================== */
+
 const SUPABASE_URL =
   "https://bamzrqiwafapvbaeqwmc.supabase.co";
 
+
 const SUPABASE_PUBLISHABLE_KEY =
   "sb_publishable__JuZIKXRL9KeYmdJV1d4-Q__gNmW3gc";
+
 
 const supabaseClient =
   window.supabase.createClient(
@@ -390,15 +654,22 @@ const supabaseClient =
   );
 
 
-/* =========================================
+
+/* =====================================================
    MUSIC
-========================================= */
+===================================================== */
 
 const audio =
-  document.getElementById("forest-audio");
+  document.getElementById(
+    "forest-audio"
+  );
+
 
 const soundToggle =
-  document.getElementById("sound-toggle");
+  document.getElementById(
+    "sound-toggle"
+  );
+
 
 let musicStarted = false;
 
@@ -411,6 +682,7 @@ if (audio) {
   function updateSoundButton() {
 
     if (!soundToggle) return;
+
 
     if (audio.paused) {
 
@@ -470,7 +742,9 @@ if (audio) {
   function firstInteraction() {
 
     if (!musicStarted) {
+
       startMusic();
+
     }
 
   }
@@ -494,6 +768,7 @@ if (audio) {
 
         event.stopPropagation();
 
+
         if (audio.paused) {
 
           try {
@@ -515,6 +790,7 @@ if (audio) {
 
         }
 
+
         updateSoundButton();
 
       }
@@ -528,6 +804,7 @@ if (audio) {
     updateSoundButton
   );
 
+
   audio.addEventListener(
     "pause",
     updateSoundButton
@@ -536,9 +813,10 @@ if (audio) {
 }
 
 
-/* =========================================
-   SUPABASE
-========================================= */
+
+/* =====================================================
+   HTML ESCAPE
+===================================================== */
 
 function escapeHtml(v) {
 
@@ -556,20 +834,28 @@ function escapeHtml(v) {
 }
 
 
+
+/* =====================================================
+   GET ATTENDEES
+===================================================== */
+
 async function getAttendees() {
 
   const {
     data,
     error
-  } = await supabaseClient
-    .from("attendees")
-    .select("id,name,created_at")
-    .order(
-      "created_at",
-      {
-        ascending: true
-      }
-    );
+  } =
+    await supabaseClient
+      .from("attendees")
+      .select(
+        "id,name,created_at"
+      )
+      .order(
+        "created_at",
+        {
+          ascending: true
+        }
+      );
 
 
   if (error) {
@@ -589,12 +875,20 @@ async function getAttendees() {
 }
 
 
-function renderAttendees(attendees) {
+
+/* =====================================================
+   RENDER ATTENDEES
+===================================================== */
+
+function renderAttendees(
+  attendees
+) {
 
   const list =
     document.getElementById(
       "attendee-list"
     );
+
 
   list.innerHTML = "";
 
@@ -603,10 +897,14 @@ function renderAttendees(attendees) {
     ({ name }) => {
 
       const li =
-        document.createElement("li");
+        document.createElement(
+          "li"
+        );
+
 
       li.innerHTML =
         `<strong>${escapeHtml(name)}</strong>`;
+
 
       list.appendChild(li);
 
@@ -622,6 +920,11 @@ function renderAttendees(attendees) {
 }
 
 
+
+/* =====================================================
+   REFRESH ATTENDEES
+===================================================== */
+
 async function refreshAttendees() {
 
   renderAttendees(
@@ -631,15 +934,18 @@ async function refreshAttendees() {
 }
 
 
-/* =========================================
+
+/* =====================================================
    LOCAL CONFIRMATION
-========================================= */
+===================================================== */
 
 const JOINED_KEY =
   "forestDuffJoined";
 
+
 const JOINED_NAME_KEY =
   "forestDuffJoinedName";
+
 
 
 function showJoinedState(name) {
@@ -648,6 +954,7 @@ function showJoinedState(name) {
     JOINED_KEY,
     "true"
   );
+
 
   localStorage.setItem(
     JOINED_NAME_KEY,
@@ -660,30 +967,43 @@ function showJoinedState(name) {
       "signup-area"
     );
 
+
   if (!area) return;
 
 
   area.innerHTML = `
-    <div class="joined-state" aria-live="polite">
+
+    <div
+      class="joined-state"
+      aria-live="polite"
+    >
 
       <p class="joined-kicker">
         CONFIRMED
       </p>
+
 
       <div class="joined-title">
         YOU’RE<br>
         <i>IN.</i>
       </div>
 
+
       <div class="joined-name">
         ${escapeHtml(name)}
       </div>
 
     </div>
+
   `;
 
 }
 
+
+
+/* =====================================================
+   DUPLICATE NAME
+===================================================== */
 
 function showDuplicateState() {
 
@@ -691,6 +1011,7 @@ function showDuplicateState() {
     document.getElementById(
       "coming-note"
     );
+
 
   const input =
     document.getElementById(
@@ -704,14 +1025,18 @@ function showDuplicateState() {
       "duplicate-note"
     );
 
+
     note.innerHTML = `
+
       <strong>
         THAT NAME<br>
         IS ALREADY USED.
       </strong>
+
       <span>
         Try another name.
       </span>
+
     `;
 
   }
@@ -720,6 +1045,7 @@ function showDuplicateState() {
   if (input) {
 
     input.focus();
+
     input.select();
 
   }
@@ -727,7 +1053,14 @@ function showDuplicateState() {
 }
 
 
-function showErrorState(message) {
+
+/* =====================================================
+   ERROR
+===================================================== */
+
+function showErrorState(
+  message
+) {
 
   const note =
     document.getElementById(
@@ -741,6 +1074,7 @@ function showErrorState(message) {
       "duplicate-note"
     );
 
+
     note.textContent =
       message;
 
@@ -749,18 +1083,23 @@ function showErrorState(message) {
 }
 
 
-/* =========================================
-   FORM
-========================================= */
+
+/* =====================================================
+   FORM SUBMISSION
+===================================================== */
 
 document
-  .getElementById("coming-form")
+  .getElementById(
+    "coming-form"
+  )
   .addEventListener(
     "submit",
     async e => {
 
       e.preventDefault();
 
+
+      /* Already registered on this device */
 
       if (
         localStorage.getItem(
@@ -773,6 +1112,7 @@ document
             JOINED_NAME_KEY
           ) || ""
         );
+
 
         return;
 
@@ -804,11 +1144,15 @@ document
           "duplicate-note"
         );
 
+
         note.textContent =
           "CHECKING…";
 
       }
 
+
+
+      /* Check duplicate */
 
       const {
         data: existing,
@@ -816,7 +1160,9 @@ document
       } =
         await supabaseClient
           .from("attendees")
-          .select("id,name")
+          .select(
+            "id,name"
+          )
           .ilike(
             "name",
             name
@@ -831,9 +1177,11 @@ document
           checkError
         );
 
+
         showErrorState(
           "Something went wrong. Try again."
         );
+
 
         return;
 
@@ -852,6 +1200,9 @@ document
       }
 
 
+
+      /* Insert attendee */
+
       const {
         error
       } =
@@ -869,22 +1220,32 @@ document
           error
         );
 
+
         showErrorState(
           "Something went wrong. Try again."
         );
+
 
         return;
 
       }
 
 
-      showJoinedState(name);
+
+      /* Confirm */
+
+      showJoinedState(
+        name
+      );
+
 
       await refreshAttendees();
 
 
       document
-        .getElementById("attendees")
+        .getElementById(
+          "attendees"
+        )
         .scrollIntoView({
           behavior: "smooth",
           block: "start"
@@ -894,9 +1255,10 @@ document
   );
 
 
-/* =========================================
+
+/* =====================================================
    RESTORE LOCAL CONFIRMATION
-========================================= */
+===================================================== */
 
 if (
   localStorage.getItem(
@@ -913,19 +1275,23 @@ if (
 }
 
 
-/* =========================================
+
+/* =====================================================
    INITIAL ATTENDEES
-========================================= */
+===================================================== */
 
 refreshAttendees();
 
 
-/* =========================================
-   REALTIME ATTENDEE UPDATES
-========================================= */
+
+/* =====================================================
+   REALTIME
+===================================================== */
 
 supabaseClient
-  .channel("attendees-live")
+  .channel(
+    "attendees-live"
+  )
   .on(
     "postgres_changes",
     {
@@ -942,6 +1308,7 @@ supabaseClient
         status
       )
   );
+
 
 </script>
 
