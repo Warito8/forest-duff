@@ -60,8 +60,6 @@
    SVG VERSION — SAFE ON IPHONE / SAFARI
 ========================================================= */
 
-/* Completely override any old .arrow styling */
-
 .hero-action .arrow {
   position: absolute !important;
   right: 28px !important;
@@ -88,7 +86,7 @@
 }
 
 
-/* Kill the old CSS arrow pseudo-elements */
+/* Remove old CSS arrow pseudo-elements */
 
 .hero-action .arrow::before,
 .hero-action .arrow::after {
@@ -110,7 +108,7 @@
 }
 
 
-/* SVG itself */
+/* SVG */
 
 .hero-action .arrow svg {
   width: 100% !important;
@@ -145,9 +143,7 @@
 }
 
 
-/* =========================================================
-   MOBILE
-========================================================= */
+/* Mobile */
 
 @media (max-width: 700px) {
 
@@ -226,8 +222,6 @@
       </strong>
 
 
-      <!-- SVG ARROW -->
-
       <span
         class="arrow"
         aria-hidden="true"
@@ -267,8 +261,6 @@
         TO HELP
       </strong>
 
-
-      <!-- SVG ARROW -->
 
       <span
         class="arrow"
@@ -603,7 +595,6 @@
   preload="auto"
   autoplay
   playsinline
-  loop
 >
 
   <source
@@ -1098,8 +1089,6 @@ document
 
       e.preventDefault();
 
-
-      /* Already registered on this device */
 
       if (
         localStorage.getItem(
