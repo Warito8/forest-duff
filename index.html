@@ -209,6 +209,45 @@ supabaseClient
   .on("postgres_changes", {event:"*", schema:"public", table:"attendees"}, () => refreshAttendees())
   .subscribe(status => console.log("Attendees realtime:", status));
 </script>
+<audio id="forest-audio" preload="auto" autoplay playsinline loop>
+  <source src="savannah.mp3" type="audio/mpeg">
+</audio>
 
+<button id="sound-toggle" type="button" aria-label="Music on/off" title="Music on/off">♪</button>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const audio = document.getElementById("forest-audio");
+  const toggle = document.getElementById("sound-toggle");
+
+  if (!audio) return;
+
+  audio.volume = 0.72;
+
+  const startMusic = () => {
+    audio.play().catch(() => {});
+  };
+
+  startMusic();
+
+  document.addEventListener("click", startMusic, { once: true });
+  document.addEventListener("touchstart", startMusic, { once: true });
+
+  if (toggle) {
+    toggle.addEventListener("click", (event) => {
+      event.stopPropagation();
+
+      if (audio.paused) {
+        audio.play().catch(() => {});
+        toggle.textContent = "Ⅱ";
+      } else {
+        audio.pause();
+        toggle.textContent = "♪";
+      }
+    });
+  }
+});
+</script>
+  
 </body>
 </html>
