@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="style.css">
 
 <style>
+
 /* =========================================================
    MUSIC CONTROL
 ========================================================= */
@@ -53,6 +54,7 @@
   border-color: rgba(244,234,213,.9);
 }
 
+
 /* =========================================================
    REMOVE ALL ARROW DECORATIONS FROM HERO BUTTONS
 ========================================================= */
@@ -72,25 +74,34 @@
   transform: none !important;
 }
 
+
 /* =========================================================
    MOBILE
 ========================================================= */
 
 @media (max-width: 700px) {
+
   .hero-action::before,
   .hero-action::after {
     content: none !important;
     display: none !important;
   }
+
 }
+
 </style>
 </head>
+
 
 <body>
 
 <main>
 
-<!-- HERO -->
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
 <section class="hero">
 
   <div class="top">
@@ -98,7 +109,9 @@
     <span>MON 12 OCT</span>
   </div>
 
+
   <div class="hero-layout">
+
     <div class="hero-title">
 
       <p class="micro">
@@ -116,14 +129,24 @@
       </p>
 
     </div>
+
   </div>
 
+
+  <!-- ===================================================
+       ACTION BUTTONS
+  ==================================================== -->
+
   <div class="hero-actions">
+
+
+    <!-- I'M COMING -->
 
     <a
       class="hero-action coming"
       href="#coming"
     >
+
       <span class="action-small">
         01 / JOIN US
       </span>
@@ -132,7 +155,11 @@
         I'M<br>
         COMING
       </strong>
+
     </a>
+
+
+    <!-- I WANT TO HELP -->
 
     <a
       class="hero-action help"
@@ -140,6 +167,7 @@
       target="_blank"
       rel="noopener"
     >
+
       <span class="action-small">
         02 / GET INVOLVED
       </span>
@@ -148,9 +176,11 @@
         I WANT<br>
         TO HELP
       </strong>
+
     </a>
 
   </div>
+
 
   <div class="bottom">
     <span>BYO DRINKS</span>
@@ -160,7 +190,11 @@
 </section>
 
 
-<!-- WHAT'S THE DOOF -->
+
+<!-- =====================================================
+     WHAT'S THE DOOF
+===================================================== -->
+
 <section class="duff">
 
   <p class="label">
@@ -168,7 +202,6 @@
   </p>
 
   <h2>
-    A LITTLE<br>
     <i>GATHERING</i><br>
     IN THE WOODS.
   </h2>
@@ -178,27 +211,57 @@
     A farewell night in the forest — one last dance on the island.
   </p>
 
+
   <div class="event-card">
 
+
     <div>
+
       <small>WHEN</small>
-      <b>MONDAY 12 OCTOBER</b>
-      <span>6:30 PM → LATE</span>
+
+      <b>
+        MONDAY 12 OCTOBER
+      </b>
+
+      <span>
+        6:30 PM → LATE
+      </span>
+
     </div>
 
+
     <div>
+
       <small>DRINKS</small>
-      <b>BYO</b>
-      <span>Bring your own drinks.</span>
+
+      <b>
+        BYO
+      </b>
+
+      <span>
+        Bring your own drinks.
+      </span>
+
     </div>
 
+
     <div>
+
       <small>VIBE</small>
-      <b>MUSIC + NATURE</b>
-      <span>Come as you are.</span>
+
+      <b>
+        MUSIC + NATURE
+      </b>
+
+      <span>
+        Come as you are.
+      </span>
+
     </div>
+
 
   </div>
+
 
   <p class="participate">
     Lights, decoration, firelight, projections, art, rugs,
@@ -208,12 +271,21 @@
 </section>
 
 
-<!-- I'M COMING -->
-<section id="coming" class="coming-section">
+
+<!-- =====================================================
+     I'M COMING
+===================================================== -->
+
+<section
+  id="coming"
+  class="coming-section"
+>
 
   <div class="coming-inner">
 
+
     <div>
+
       <p class="label">
         I'M COMING
       </p>
@@ -226,13 +298,19 @@
       <p class="intro">
         Add your name.
       </p>
+
     </div>
+
 
     <div id="signup-area">
 
-      <form id="coming-form" class="name-form">
+      <form
+        id="coming-form"
+        class="name-form"
+      >
 
         <label>
+
           Your name
 
           <input
@@ -241,7 +319,9 @@
             autocomplete="name"
             placeholder="Your name"
           >
+
         </label>
+
 
         <button
           class="submit"
@@ -249,6 +329,7 @@
         >
           I'M IN →
         </button>
+
 
         <p
           id="coming-note"
@@ -264,17 +345,28 @@
 </section>
 
 
-<!-- ATTENDEES -->
-<section id="attendees" class="count-section">
+
+<!-- =====================================================
+     ATTENDEES
+===================================================== -->
+
+<section
+  id="attendees"
+  class="count-section"
+>
 
   <div class="count-grid">
 
+
     <div class="names">
+
       <ul
         id="attendee-list"
         class="attendee-list"
       ></ul>
+
     </div>
+
 
     <div class="count-wrap">
 
@@ -291,12 +383,17 @@
 
     </div>
 
+
   </div>
 
 </section>
 
 
-<!-- SHARE -->
+
+<!-- =====================================================
+     SHARE
+===================================================== -->
+
 <section class="archive-share">
 
   <div class="archive-share-inner">
@@ -305,15 +402,18 @@
       THE FOREST IS COMING TOGETHER
     </p>
 
+
     <h2>
       SHARE THE<br>
       <i>MOMENTS.</i>
     </h2>
 
+
     <p class="intro">
       Share the making and the moments.<br>
       Photos &amp; videos from the preparation and the night.
     </p>
+
 
     <a
       class="share-button"
@@ -321,9 +421,13 @@
       target="_blank"
       rel="noopener"
     >
+
       <span>＋</span>
+
       SHARE A MOMENT
+
       <b>↗</b>
+
     </a>
 
   </div>
@@ -331,17 +435,23 @@
 </section>
 
 
-<!-- FINAL -->
+
+<!-- =====================================================
+     FINAL
+===================================================== -->
+
 <section class="final">
 
   <p class="micro">
     MONDAY 12 OCTOBER · 6:30 PM → LATE
   </p>
 
+
   <h2>
     SEE YOU<br>
     <i>IN THE WOODS.</i>
   </h2>
+
 
   <p class="final-signature">
     eDOOFarewell
@@ -349,27 +459,47 @@
 
 </section>
 
+
 </main>
 
 
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
 <footer>
-  <span>FOREST DOOF</span>
-  <span>Made together.</span>
+
+  <span>
+    FOREST DOOF
+  </span>
+
+  <span>
+    Made together.
+  </span>
+
 </footer>
 
 
-<!-- AUDIO -->
+
+<!-- =====================================================
+     AUDIO
+===================================================== -->
+
 <audio
   id="forest-audio"
   preload="auto"
   autoplay
   playsinline
 >
+
   <source
     src="savannah.mp3"
     type="audio/mpeg"
   >
+
 </audio>
+
 
 <button
   id="sound-toggle"
@@ -381,22 +511,35 @@
 </button>
 
 
-<!-- SUPABASE -->
+
+<!-- =====================================================
+     SUPABASE
+===================================================== -->
+
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
+
 <script>
+
+
+/* =====================================================
+   SUPABASE CONFIG
+===================================================== */
 
 const SUPABASE_URL =
   "https://bamzrqiwafapvbaeqwmc.supabase.co";
 
+
 const SUPABASE_PUBLISHABLE_KEY =
   "sb_publishable__JuZIKXRL9KeYmdJV1d4-Q__gNmW3gc";
+
 
 const supabaseClient =
   window.supabase.createClient(
     SUPABASE_URL,
     SUPABASE_PUBLISHABLE_KEY
   );
+
 
 
 /* =====================================================
@@ -408,20 +551,25 @@ const audio =
     "forest-audio"
   );
 
+
 const soundToggle =
   document.getElementById(
     "sound-toggle"
   );
 
+
 let musicStarted = false;
+
 
 if (audio) {
 
   audio.volume = 0.72;
 
+
   function updateSoundButton() {
 
     if (!soundToggle) return;
+
 
     if (audio.paused) {
 
@@ -481,7 +629,9 @@ if (audio) {
   function firstInteraction() {
 
     if (!musicStarted) {
+
       startMusic();
+
     }
 
   }
@@ -505,6 +655,7 @@ if (audio) {
 
         event.stopPropagation();
 
+
         if (audio.paused) {
 
           try {
@@ -526,6 +677,7 @@ if (audio) {
 
         }
 
+
         updateSoundButton();
 
       }
@@ -539,6 +691,7 @@ if (audio) {
     updateSoundButton
   );
 
+
   audio.addEventListener(
     "pause",
     updateSoundButton
@@ -547,8 +700,9 @@ if (audio) {
 }
 
 
+
 /* =====================================================
-   SUPABASE
+   HTML ESCAPE
 ===================================================== */
 
 function escapeHtml(v) {
@@ -566,6 +720,11 @@ function escapeHtml(v) {
 
 }
 
+
+
+/* =====================================================
+   GET ATTENDEES
+===================================================== */
 
 async function getAttendees() {
 
@@ -603,12 +762,20 @@ async function getAttendees() {
 }
 
 
-function renderAttendees(attendees) {
+
+/* =====================================================
+   RENDER ATTENDEES
+===================================================== */
+
+function renderAttendees(
+  attendees
+) {
 
   const list =
     document.getElementById(
       "attendee-list"
     );
+
 
   list.innerHTML = "";
 
@@ -621,8 +788,10 @@ function renderAttendees(attendees) {
           "li"
         );
 
+
       li.innerHTML =
         `<strong>${escapeHtml(name)}</strong>`;
+
 
       list.appendChild(li);
 
@@ -638,6 +807,11 @@ function renderAttendees(attendees) {
 }
 
 
+
+/* =====================================================
+   REFRESH ATTENDEES
+===================================================== */
+
 async function refreshAttendees() {
 
   renderAttendees(
@@ -647,6 +821,7 @@ async function refreshAttendees() {
 }
 
 
+
 /* =====================================================
    LOCAL CONFIRMATION
 ===================================================== */
@@ -654,8 +829,10 @@ async function refreshAttendees() {
 const JOINED_KEY =
   "forestDuffJoined";
 
+
 const JOINED_NAME_KEY =
   "forestDuffJoinedName";
+
 
 
 function showJoinedState(name) {
@@ -664,6 +841,7 @@ function showJoinedState(name) {
     JOINED_KEY,
     "true"
   );
+
 
   localStorage.setItem(
     JOINED_NAME_KEY,
@@ -676,10 +854,12 @@ function showJoinedState(name) {
       "signup-area"
     );
 
+
   if (!area) return;
 
 
   area.innerHTML = `
+
     <div
       class="joined-state"
       aria-live="polite"
@@ -689,20 +869,28 @@ function showJoinedState(name) {
         CONFIRMED
       </p>
 
+
       <div class="joined-title">
         YOU’RE<br>
         <i>IN.</i>
       </div>
+
 
       <div class="joined-name">
         ${escapeHtml(name)}
       </div>
 
     </div>
+
   `;
 
 }
 
+
+
+/* =====================================================
+   DUPLICATE NAME
+===================================================== */
 
 function showDuplicateState() {
 
@@ -710,6 +898,7 @@ function showDuplicateState() {
     document.getElementById(
       "coming-note"
     );
+
 
   const input =
     document.getElementById(
@@ -723,7 +912,9 @@ function showDuplicateState() {
       "duplicate-note"
     );
 
+
     note.innerHTML = `
+
       <strong>
         THAT NAME<br>
         IS ALREADY USED.
@@ -732,6 +923,7 @@ function showDuplicateState() {
       <span>
         Try another name.
       </span>
+
     `;
 
   }
@@ -740,6 +932,7 @@ function showDuplicateState() {
   if (input) {
 
     input.focus();
+
     input.select();
 
   }
@@ -747,7 +940,14 @@ function showDuplicateState() {
 }
 
 
-function showErrorState(message) {
+
+/* =====================================================
+   ERROR
+===================================================== */
+
+function showErrorState(
+  message
+) {
 
   const note =
     document.getElementById(
@@ -761,6 +961,7 @@ function showErrorState(message) {
       "duplicate-note"
     );
 
+
     note.textContent =
       message;
 
@@ -769,12 +970,15 @@ function showErrorState(message) {
 }
 
 
+
 /* =====================================================
-   FORM
+   FORM SUBMISSION
 ===================================================== */
 
 document
-  .getElementById("coming-form")
+  .getElementById(
+    "coming-form"
+  )
   .addEventListener(
     "submit",
     async e => {
@@ -794,6 +998,7 @@ document
           ) || ""
         );
 
+
         return;
 
       }
@@ -803,6 +1008,7 @@ document
         document.getElementById(
           "coming-name"
         );
+
 
       const name =
         input.value.trim();
@@ -823,11 +1029,15 @@ document
           "duplicate-note"
         );
 
+
         note.textContent =
           "CHECKING…";
 
       }
 
+
+
+      /* Check duplicate */
 
       const {
         data: existing,
@@ -835,7 +1045,9 @@ document
       } =
         await supabaseClient
           .from("attendees")
-          .select("id,name")
+          .select(
+            "id,name"
+          )
           .ilike(
             "name",
             name
@@ -850,9 +1062,11 @@ document
           checkError
         );
 
+
         showErrorState(
           "Something went wrong. Try again."
         );
+
 
         return;
 
@@ -871,6 +1085,9 @@ document
       }
 
 
+
+      /* Insert attendee */
+
       const {
         error
       } =
@@ -888,16 +1105,24 @@ document
           error
         );
 
+
         showErrorState(
           "Something went wrong. Try again."
         );
+
 
         return;
 
       }
 
 
-      showJoinedState(name);
+
+      /* Confirm */
+
+      showJoinedState(
+        name
+      );
+
 
       await refreshAttendees();
 
@@ -913,6 +1138,7 @@ document
 
     }
   );
+
 
 
 /* =====================================================
@@ -934,6 +1160,7 @@ if (
 }
 
 
+
 /* =====================================================
    INITIAL ATTENDEES
 ===================================================== */
@@ -941,12 +1168,15 @@ if (
 refreshAttendees();
 
 
+
 /* =====================================================
    REALTIME
 ===================================================== */
 
 supabaseClient
-  .channel("attendees-live")
+  .channel(
+    "attendees-live"
+  )
   .on(
     "postgres_changes",
     {
@@ -963,6 +1193,7 @@ supabaseClient
         status
       )
   );
+
 
 </script>
 
