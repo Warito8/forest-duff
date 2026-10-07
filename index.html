@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#0b0d0a">
-<title>FOREST DOOF</title>
+<title>FOREST DUFF</title>
 <meta name="description" content="A little gathering in the woods. Monday 12 October, 6:30 PM until late.">
 <link rel="stylesheet" href="style.css">
 
@@ -56,7 +56,7 @@
 
 
 /* =========================================================
-   REMOVE ALL ARROW DECORATIONS FROM HERO BUTTONS
+   COMPLETELY DISABLE OLD HERO CARD DECORATIONS
 ========================================================= */
 
 .hero-action::before,
@@ -64,27 +64,94 @@
   content: none !important;
   display: none !important;
   visibility: hidden !important;
+
   width: 0 !important;
   height: 0 !important;
+
   margin: 0 !important;
   padding: 0 !important;
+
   background: none !important;
+
   border: 0 !important;
+  outline: 0 !important;
+
   box-shadow: none !important;
+
   transform: none !important;
 }
 
 
 /* =========================================================
-   MOBILE
+   CLEAN ACTION ARROWS
 ========================================================= */
+
+.clean-action-arrow {
+  position: absolute !important;
+
+  right: 28px !important;
+  bottom: 28px !important;
+
+  width: 30px !important;
+  height: 30px !important;
+
+  display: block !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  overflow: visible !important;
+
+  background: transparent !important;
+
+  border: 0 !important;
+  outline: 0 !important;
+
+  box-shadow: none !important;
+
+  transform: none !important;
+
+  font-size: 0 !important;
+  line-height: 0 !important;
+
+  color: #cbdc8a !important;
+}
+
+
+/* SVG itself */
+
+.clean-action-arrow path {
+  fill: none !important;
+
+  stroke: #cbdc8a !important;
+
+  stroke-width: 1.5 !important;
+
+  stroke-linecap: square !important;
+
+  stroke-linejoin: miter !important;
+}
+
+
+/* Make sure the SVG has no pseudo decorations */
+
+.clean-action-arrow::before,
+.clean-action-arrow::after {
+  content: none !important;
+  display: none !important;
+}
+
+
+/* Mobile */
 
 @media (max-width: 700px) {
 
-  .hero-action::before,
-  .hero-action::after {
-    content: none !important;
-    display: none !important;
+  .clean-action-arrow {
+    right: 24px !important;
+    bottom: 24px !important;
+
+    width: 30px !important;
+    height: 30px !important;
   }
 
 }
@@ -105,7 +172,7 @@
 <section class="hero">
 
   <div class="top">
-    <span>FOREST DOOF</span>
+    <span>FOREST DUFF</span>
     <span>MON 12 OCT</span>
   </div>
 
@@ -120,7 +187,7 @@
 
       <h1>
         FOREST<br>
-        <i>DOOF</i>
+        <i>DUFF</i>
       </h1>
 
       <p class="date">
@@ -156,6 +223,20 @@
         COMING
       </strong>
 
+
+      <svg
+        class="clean-action-arrow"
+        viewBox="0 0 28 28"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+      >
+
+        <path
+          d="M4 4 L24 24 M16 24 H24 V16"
+        />
+
+      </svg>
+
     </a>
 
 
@@ -177,6 +258,20 @@
         TO HELP
       </strong>
 
+
+      <svg
+        class="clean-action-arrow"
+        viewBox="0 0 28 28"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+      >
+
+        <path
+          d="M4 24 L24 4 M16 4 H24 V12"
+        />
+
+      </svg>
+
     </a>
 
   </div>
@@ -192,16 +287,17 @@
 
 
 <!-- =====================================================
-     WHAT'S THE DOOF
+     WHAT'S THE DUFF
 ===================================================== -->
 
 <section class="duff">
 
   <p class="label">
-    WHAT'S THE DOOF?
+    WHAT'S THE DUFF?
   </p>
 
   <h2>
+    A LITTLE<br>
     <i>GATHERING</i><br>
     IN THE WOODS.
   </h2>
@@ -454,7 +550,7 @@
 
 
   <p class="final-signature">
-    eDOOFarewell
+    eDUFFarewell
   </p>
 
 </section>
@@ -471,7 +567,7 @@
 <footer>
 
   <span>
-    FOREST DOOF
+    FOREST DUFF
   </span>
 
   <span>
